@@ -3,7 +3,7 @@
 
     "name": "Quokka Chat",
     "description": "Overlays Quokka.chat forum content onto a YouTube video page",
-    "version": "1.0",
+    "version": "0.0.0.1",
 
     "background": {
         "page": "background.html",
