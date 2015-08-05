@@ -118,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
-    console.log('CHANGING BG COLOR!!!')
     chrome.tabs.executeScript({
         code: 'document.body.style.backgroundColor="red"'
     });

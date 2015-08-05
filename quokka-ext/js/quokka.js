@@ -15,7 +15,6 @@ $(document).on('ready', function() {
         url: url,
         embedId: getId(url)
     }
-    console.log('THIS IS DATA', data)
 
     $('.quokka').on('click', function() {
 
@@ -25,19 +24,16 @@ $(document).on('ready', function() {
         })
         chrome.runtime.onMessage.addListener(function(req, sender) {
             if (req.command === 'get') {
-                console.log('THIS IS REQ.MESSAGE!!!', req.message !== null);
                 if (req.message !== null) {
                     console.log('it already exists! redirecting! :)')
                     location.href = 'http://www.quokka.chat/room/' + req.message._id;
                 } else {
-                    console.log('creating video!!!');
                     chrome.runtime.sendMessage({
                         command: 'send',
                         data: data
                     });
                     chrome.runtime.onMessage.addListener(function(req, sender) {
                         if (req.command === 'send') {
-                            console.log('THIS IS POSTED VIDEO', req.message);
                             location.href = 'http://www.quokka.chat/room/' + req.message._id;
                         }
                     })

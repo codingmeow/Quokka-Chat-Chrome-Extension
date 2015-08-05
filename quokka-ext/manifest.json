@@ -3,7 +3,7 @@
 
     "name": "Quokka Chat",
     "description": "Adds video content directly to Quokka.chat web app",
-    "version": "0.0.0.2",
+    "version": "0.0.0.3",
 
     "background": {
         "page": "background.html",
